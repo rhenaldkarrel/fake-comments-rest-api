@@ -1,0 +1,25 @@
+<!-- Form New Comments -->
+<%- include('../partials/head.ejs') %>
+
+<a href="/comments" class="button">Back</a>
+<h1 class="has-text-centered is-size-1 mb-5">Post New Comment</h1>
+
+<form action="/comments" method="post">
+    <div class="field">
+        <label class="label">Username</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="username" name="username" required autocomplete="off">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Comments</label>
+        <div class="control">
+            <textarea class="textarea" placeholder="comments" name="text" required></textarea>
+        </div>
+    </div>
+
+    <button class="button is-large is-primary is-fullwidth">Submit</button>
+</form>
+
+<%- include('../partials/footer.ejs') %>

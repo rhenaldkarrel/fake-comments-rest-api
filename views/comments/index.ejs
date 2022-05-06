@@ -1,0 +1,42 @@
+<!-- Index Comments -->
+<%- include('../partials/head.ejs') %>
+
+<div class="box has-text-centered">
+    <a href="/comments/new" class="button is-primary">Post New Comment</a>
+</div>
+
+<div class="columns is-multiline is-mobile">
+    <% for(let comment of comments) {%>
+    <div class="column is-3">
+        <div class="card">
+            <div class="card-content">
+                <form action="/comments/<%= comment.id %>?_method=delete" method="post"
+                    class="is-flex is-justify-content-end mb-3">
+                    <button
+                        style="border: none; background-color: transparent; color: red;font-weight: bold; cursor: pointer;">X</button>
+                </form>
+                <p class="title">
+                    <%= comment.text %>
+                </p>
+                <p class="subtitle">
+                    <%= comment.username %>
+                </p>
+            </div>
+            <footer class="card-footer">
+                <p class="card-footer-item">
+                    <span>
+                        <a href="/comments/<%= comment.id %> ">Open</a>
+                    </span>
+                </p>
+                <p class="card-footer-item">
+                    <span>
+                        <a href="/comments/<%= comment.id %>/edit ">Edit</a>
+                    </span>
+                </p>
+            </footer>
+        </div>
+    </div>
+    <% } %>
+</div>
+
+<%- include('../partials/footer.ejs') %>

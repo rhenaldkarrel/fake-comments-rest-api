@@ -1,0 +1,26 @@
+<!-- Index Comments -->
+<%- include('../partials/head.ejs') %>
+
+<div class="columns is-multiline is-mobile is-justify-content-center">
+    <div class="column is-3">
+        <div class="card">
+            <div class="card-content">
+                <p class="title">
+                    <%= comment.text %>
+                </p>
+                <p class="subtitle">
+                    <%= comment.username %>
+                </p>
+            </div>
+            <footer class="card-footer">
+                <p class="card-footer-item">
+                    <span>
+                        <a href="/comments">Back</a>
+                    </span>
+                </p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

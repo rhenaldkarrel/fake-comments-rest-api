@@ -1,0 +1,18 @@
+<!-- Form New Comments -->
+<%- include('../partials/head.ejs') %>
+
+<a href="/comments" class="button">Back</a>
+<h1 class="has-text-centered is-size-1 mb-5">Edit Comment</h1>
+
+<form action="/comments/<%= comment.id %>?_method=PATCH" method="post">
+    <div class="field">
+        <label class="label">Comments</label>
+        <div class="control">
+            <textarea class="textarea" name="text" required><%= comment.text %></textarea>
+        </div>
+    </div>
+
+    <button class="button is-large is-primary is-fullwidth">Submit</button>
+</form>
+
+<%- include('../partials/footer.ejs') %>
